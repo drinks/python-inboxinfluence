@@ -19,7 +19,7 @@ class InboxInfluenceError(Exception):
 class InboxInfluence404(Exception):
     """ Not found exception for empty responses """
 
-class InboxInfluenceResponse(object):
+class InboxInfluenceMatch(object):
     def __init__(self, **kwargs):
         self.__dict__.update(kwargs)
 
@@ -42,7 +42,7 @@ class inboxinfluence(object):
 
             objs = []
             for entity in resp['entities']:
-                objs.append(InboxInfluenceResponse(**entity))
+                objs.append(InboxInfluenceMatch(**entity))
 
             return objs
 
